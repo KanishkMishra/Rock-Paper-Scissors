@@ -34,9 +34,15 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = window.prompt("Rock, Paper or Scissors?");
-        let computerSelection = computerPlay();
+        const playerSelection = window.prompt("Rock, Paper, Scissors!");
+        const computerSelection = computerPlay();
 
-        console.log(playerSelection, computerSelection);
+        if ((playerSelection.toLowerCase()=="rock") || (playerSelection.toLowerCase()=="paper") || (playerSelection.toLowerCase()=="scissors")) {
+            console.log(playRound(playerSelection, computerSelection));
+        } else {
+            console.log("Invalid input, Rocks, Papers and Scissors only!!!");
+        }
     }
 }
+
+game()
